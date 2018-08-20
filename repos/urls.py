@@ -3,6 +3,6 @@ from django.urls import path
 from .import views
 
 urlpatterns=[
-path('',views.usersearch),
-path('repo/<reponame>',views.repos,name='reponame'),
+path('',views.reposearch),
+path('repo/<reponame>',views.commithist,name='reponame'),
 ]

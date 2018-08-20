@@ -7,15 +7,15 @@
     <button type="submit">View</button>
   </form>
   {% if found %}
-  {{git_username}}exists on github.The local repositories are listed below:
-  <ul>
+  {{git_username}} has an existing account on github.
+  <ol>
   {% for key in repo %}
   <li>Name :<a href="repo/{{key.0}}">{{key.0}}</a><br>Language of the repository is {{key.1}}</li>
   {% empty %}
-  <li>Sorry,{{git_username }} has 0 repositories</li>
+  <li>Sorry,{{git_username }} has no repositories.</li>
   {% endfor %}
-</ul>
+</ol>
 {% elif notfound %}
-{{username}} was not found
+{{git_username}} does not exist.
 {% endif %}
 {% endblock %}
