@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}View{% endblock %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">View</button>
+  </form>
+  {% if found %}
+  {{git_username}}exists on github.The local repositories are listed below:
+  <ul>
+  {% for key in repo %}
+  <li>Name :<a href="repo/{{key.0}}">{{key.0}}</a><br>Language of the repository is {{key.1}}</li>
+  {% empty %}
+  <li>Sorry,{{git_username }} has 0 repositories</li>
+  {% endfor %}
+</ul>
+{% elif notfound %}
+{{username}} was not found
+{% endif %}
+{% endblock %}
