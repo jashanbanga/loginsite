@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-The commit history of the person {{git_username}} having the repository {{reponame}} is:
-{{dict}}
+Username:{{git_username}} 
+<p></p>
+Repository name:{{reponame}}
+<p></p>
+Commit history:{{dict}}
 {% endblock %}
